@@ -20,17 +20,38 @@
             "outputPath": "dist/wxp-angular16",
             "index": "src/index.html",
             "main": "src/main.ts",
-            "polyfills": [
-              "zone.js"
-            ],
+            "polyfills": ["zone.js"],
             "tsConfig": "tsconfig.app.json",
             "inlineStyleLanguage": "scss",
             "assets": [
-              "src/favicon.ico",
-              "src/assets"
+              "src/assets",
+              {
+                "glob": "**/*",
+                "input": "./node_modules/@wxp/common/assets",
+                "output": "./assets/"
+              }
             ],
             "styles": [
-              "src/styles.scss"
+              {
+                "input": "./node_modules/@atoms/angular-components/src/assets/styles/atoms-core.css",
+                "inject": true,
+                "bundleName": "atoms-core"
+              },
+              {
+                "input": "./node_modules/@atoms/angular-components/src/assets/styles/website/atoms-web.css",
+                "inject": true,
+                "bundleName": "atoms-core"
+              },
+              {
+                "input": "./node_modules/@wxp/common/styles/basf-wxp-common.css",
+                "inject": true,
+                "bundleName": "wxp-core"
+              },
+              {
+                "input": "./node_modules/@wxp/common/styles/basf-wxp-theme.css",
+                "inject": true,
+                "bundleName": "wxp-theme"
+              }
             ],
             "scripts": []
           },
@@ -82,19 +103,11 @@
         "test": {
           "builder": "@angular-devkit/build-angular:karma",
           "options": {
-            "polyfills": [
-              "zone.js",
-              "zone.js/testing"
-            ],
+            "polyfills": ["zone.js", "zone.js/testing"],
             "tsConfig": "tsconfig.spec.json",
             "inlineStyleLanguage": "scss",
-            "assets": [
-              "src/favicon.ico",
-              "src/assets"
-            ],
-            "styles": [
-              "src/styles.scss"
-            ],
+            "assets": ["src/favicon.ico", "src/assets"],
+            "styles": ["src/styles.scss"],
             "scripts": []
           }
         }
