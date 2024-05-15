@@ -1,16 +1,16 @@
 <h1>Testing Purposes</h1>
-<div style="padding: 0 30px">
-  <basf-wxp-download-center
-    [titleHeading]="titleHeading"
-    [title]="title"
-    [noResultsLabel]="noResultsLabel"
-    [showResultCount]="showResultCount"
-    [searchbarHeadline]="searchbarHeadline"
-    [searchbarAutocomplete]="searchbarAutocomplete"
-    [searchbarPrefill]="searchbarPrefill"
-    [industry]="industry"
-    [operationDivision]="operationDivision"
-    [pimID]="pimID"
-    [showFilterBarInitially]="showFilterBarInitially"
-  ></basf-wxp-download-center>
-</div>
+
+<basf-wxp-teaser
+  [category]="'Test'"
+  [title]="'Teaser Component'"
+  [description]="'description'"
+  style="width: 33%"
+>
+</basf-wxp-teaser>
+<basf-wxp-keyword-filter-area
+  field="name"
+  dataKey="id"
+  [placeholder]="'download-center.autocompletePlaceholder'"
+  [helper]="'download-center.helperLabel'"
+  [updateResultLabel]="'download-center.updateResultsButtonLabel'"
+></basf-wxp-keyword-filter-area>
